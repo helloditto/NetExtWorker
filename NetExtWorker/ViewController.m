@@ -7,8 +7,16 @@
 //
 
 #import "ViewController.h"
+#import "NetWorkService.h"
 
 @interface ViewController ()
+// UI components
+@property (weak, nonatomic) IBOutlet UIButton *testHTTPButton;
+@property (weak, nonatomic) IBOutlet UIButton *testTCPButton;
+@property (weak, nonatomic) IBOutlet UIButton *testUDPButton;
+
+// button handlers
+- (IBAction)testHTTPHandler:(id)sender;
 
 @end
 
@@ -19,9 +27,12 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)testHTTPHandler:(id)sender {
+    [NETWorkServiceClient GET:@"http://localhost:8080" success:^(id  _Nullable result) {
+        NSLog(@"%@", result);
+    } failure:^(NSError * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 @end

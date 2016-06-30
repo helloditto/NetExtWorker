@@ -27,6 +27,7 @@
 		B65CDC2C1D24BF0C003D0AFA /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B65CDC1B1D24BF0C003D0AFA /* UIProgressView+AFNetworking.m */; };
 		B65CDC2D1D24BF0C003D0AFA /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B65CDC1D1D24BF0C003D0AFA /* UIRefreshControl+AFNetworking.m */; };
 		B65CDC2E1D24BF0C003D0AFA /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = B65CDC1F1D24BF0C003D0AFA /* UIWebView+AFNetworking.m */; };
+		B65CDC321D24C0C8003D0AFA /* NetWorkService.m in Sources */ = {isa = PBXBuildFile; fileRef = B65CDC311D24C0C8003D0AFA /* NetWorkService.m */; };
 		B6C8FE491D23C52700A88622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8FE481D23C52700A88622 /* main.m */; };
 		B6C8FE4C1D23C52700A88622 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8FE4B1D23C52700A88622 /* AppDelegate.m */; };
 		B6C8FE4F1D23C52700A88622 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C8FE4E1D23C52700A88622 /* ViewController.m */; };
@@ -99,6 +100,8 @@
 		B65CDC1D1D24BF0C003D0AFA /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		B65CDC1E1D24BF0C003D0AFA /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		B65CDC1F1D24BF0C003D0AFA /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		B65CDC301D24C0C8003D0AFA /* NetWorkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkService.h; sourceTree = "<group>"; };
+		B65CDC311D24C0C8003D0AFA /* NetWorkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkService.m; sourceTree = "<group>"; };
 		B6C8FE441D23C52700A88622 /* NetExtWorker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetExtWorker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C8FE481D23C52700A88622 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6C8FE4A1D23C52700A88622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,6 +244,15 @@
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
+		B65CDC2F1D24C0AA003D0AFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B65CDC301D24C0C8003D0AFA /* NetWorkService.h */,
+				B65CDC311D24C0C8003D0AFA /* NetWorkService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		B6C8FE3B1D23C52700A88622 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				B65CDBE81D24BD44003D0AFA /* ThirdParties */,
+				B65CDC2F1D24C0AA003D0AFA /* Service */,
 				B6C8FE4A1D23C52700A88622 /* AppDelegate.h */,
 				B6C8FE4B1D23C52700A88622 /* AppDelegate.m */,
 				B6C8FE4D1D23C52700A88622 /* ViewController.h */,
@@ -447,6 +460,7 @@
 				B65CDBF81D24BD44003D0AFA /* AsyncSocket.m in Sources */,
 				B65CDC261D24BF0C003D0AFA /* AFAutoPurgingImageCache.m in Sources */,
 				B65CDC2B1D24BF0C003D0AFA /* UIImageView+AFNetworking.m in Sources */,
+				B65CDC321D24C0C8003D0AFA /* NetWorkService.m in Sources */,
 				B6C8FE4C1D23C52700A88622 /* AppDelegate.m in Sources */,
 				B65CDC221D24BF0C003D0AFA /* AFSecurityPolicy.m in Sources */,
 				B65CDC231D24BF0C003D0AFA /* AFURLRequestSerialization.m in Sources */,
