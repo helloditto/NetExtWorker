@@ -10,6 +10,12 @@
 #import "AFNetworking.h"
 #import "CocoaAsyncSocket.h"
 
+@interface NetWorkService ()
+
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+
+@end
+
 @implementation NetWorkService
 
 +(instancetype)sharedInstance {
@@ -17,18 +23,16 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[NetWorkService alloc] init];
-        // Do any other initialisation stuff here
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        sharedInstance.manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
+        sharedInstance.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     });
     return sharedInstance;
 }
 
 #pragma mark - HTTP
 -(void)GET:(nonnull NSString *)urlString success:(nullable successHandler)success failure:(nullable failureHandler)failure {
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+    [self.manager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         NSString *result = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         if (success)
             success(result);
