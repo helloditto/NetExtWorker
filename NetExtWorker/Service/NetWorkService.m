@@ -8,6 +8,7 @@
 
 #import "NetWorkService.h"
 #import "AFNetworking.h"
+#import "CocoaAsyncSocket.h"
 
 @implementation NetWorkService
 
@@ -21,10 +22,7 @@
     return sharedInstance;
 }
 
-- (instancetype)init {
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException reason:@"Used sharedInstance or use NETWorkServiceClient macro" userInfo:nil];
-}
-
+#pragma mark - HTTP
 -(void)GET:(nonnull NSString *)urlString success:(nullable successHandler)success failure:(nullable failureHandler)failure {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];

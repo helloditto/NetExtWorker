@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-4a-0EJ">
-                                <rect key="frame" x="107" y="586" width="200" height="33"/>
+                                <rect key="frame" x="88" y="517" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -26,9 +26,12 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="testTCPHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KKF-iY-hu6"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-9s-Oy3">
-                                <rect key="frame" x="107" y="503" width="200" height="33"/>
+                                <rect key="frame" x="88" y="434" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619120965" green="0.78010259851994856" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5gY-wb-u1d"/>
@@ -44,7 +47,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHR-Cg-ITq">
-                                <rect key="frame" x="107" y="669" width="200" height="33"/>
+                                <rect key="frame" x="88" y="600" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -52,34 +55,79 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="testUDPHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wzt-8S-WHU"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Extension Test Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Rl-x5V">
-                                <rect key="frame" x="61" y="80" width="293" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network Extension Test Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Rl-x5V">
+                                <rect key="frame" x="42" y="80" width="293" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.13149307298185509" blue="0.30199420781760267" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-UF-F51">
+                                <rect key="frame" x="88" y="600" width="200" height="33"/>
+                                <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Tesl ALL Traffic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testALLHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ifj-qd-Ff0"/>
+                                    <action selector="testUDPHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLf-GC-N4f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CHR-Cg-ITq" firstAttribute="top" secondItem="dPd-4a-0EJ" secondAttribute="bottom" constant="50" id="2WO-KP-Coj"/>
+                            <constraint firstItem="CHR-Cg-ITq" firstAttribute="top" secondItem="dPd-4a-0EJ" secondAttribute="bottom" constant="50" id="2WO-KP-Coj">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="dPd-4a-0EJ" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="6An-G2-bXs"/>
                             <constraint firstItem="Abq-9s-Oy3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E9P-Od-k8x"/>
-                            <constraint firstItem="dPd-4a-0EJ" firstAttribute="top" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="50" id="KBW-eO-yFO"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="top" secondItem="CHR-Cg-ITq" secondAttribute="bottom" constant="30" id="IBd-dK-jx3"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="IkA-c2-hjF"/>
+                            <constraint firstItem="dPd-4a-0EJ" firstAttribute="top" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="50" id="KBW-eO-yFO">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstItem="CHR-Cg-ITq" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="Vuf-lx-xOx"/>
                             <constraint firstAttribute="bottom" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="200" id="i8c-9w-7lo">
                                 <variation key="heightClass=regular-widthClass=compact" constant="300"/>
                             </constraint>
                             <constraint firstItem="dPd-4a-0EJ" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="jId-mp-kb7"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="jsn-BD-HKx"/>
                             <constraint firstItem="5Ue-Rl-x5V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kMd-ep-3xI"/>
                             <constraint firstItem="5Ue-Rl-x5V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="vpq-zM-kdh">
                                 <variation key="widthClass=regular" constant="20"/>
                             </constraint>
                             <constraint firstItem="CHR-Cg-ITq" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="w1q-SI-8LO"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="h9i-UF-F51"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="IBd-dK-jx3"/>
+                                <exclude reference="IkA-c2-hjF"/>
+                                <exclude reference="jsn-BD-HKx"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="h9i-UF-F51"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="IBd-dK-jx3"/>
+                                <include reference="IkA-c2-hjF"/>
+                                <include reference="jsn-BD-HKx"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="testAllButton" destination="h9i-UF-F51" id="m1E-Jf-eOS"/>
                         <outlet property="testHTTPButton" destination="Abq-9s-Oy3" id="5DQ-u0-zcf"/>
                         <outlet property="testTCPButton" destination="dPd-4a-0EJ" id="oet-UG-eba"/>
                         <outlet property="testUDPButton" destination="CHR-Cg-ITq" id="X28-mb-Gk0"/>
