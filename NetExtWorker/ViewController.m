@@ -32,6 +32,7 @@
 @property (strong, nonatomic) GCDAsyncUdpSocket *udpSocket;
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (copy, nonatomic) NSString *message;
 //@property (strong, atomic) BOOL stop;
 
 @end
@@ -61,8 +62,10 @@
     [self createClients];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"hh:mm:ss";
+    self.message = @"Our goal is to share the sum of all human[1] knowledge about jailbroken iOS development. In other words, this is a collection of documentation written by developers to help each other write extensions (tweaks) for jailbroken iOS, and you're invited to learn from it and contribute to it too. Information about using iOS frameworks (both public and private), SpringBoard, system daemons (for hooking and hacking), and classes in applications included with the system. New articles: Kik, Active Developers, Inter Process Communication (IPC), Using ARC in tweaks, Career advice, IOMobileFramebuffer, IOAudio2Device, IOAudio2Transformer, RocketBootstrap, Breadcrumbs. If youd like to make a new article or improve an existing article, see Help:Editing for advice (and see #Editing this wiki for ideas). Articles that need work: Packaging (tools, control file tips, troubleshooting dpkg-deb errors), Next Steps After Getting Started (a set of ideas for tutorials you could write), edit this page and add your idea here.";
+
     _stop = false;
-    _maxCount = 1;
+    _maxCount = 10;
     _httpCount = 0;
     _tcpCount = 0;
     _udpCount = 0;
@@ -96,7 +99,7 @@
     if (_stop) {
         _stop = false;
     }
-    if (_httpCount < _maxCount) {
+    while (_httpCount < _maxCount) {
         [self testHTTPTraffic];
         _httpCount += 1;
     }
@@ -133,14 +136,14 @@
 - (IBAction)testTCPHandler:(id)sender {
     if (_stop)
         _stop = NO;
-    if (_tcpCount < _maxCount) {
+    while (_tcpCount < _maxCount) {
         [self testTCPTraffic];
         _tcpCount += 1;
     }
 }
 
 - (void)testTCPTraffic {
-    NSData *data = [self dataFromMessage:@"hello world"];
+    NSData *data = [self dataFromMessage:self.message];
     __weak typeof(self) weakSelf = self;
     NSError *error = nil;
     if (!self.tcpSocket.isConnected) 
@@ -157,14 +160,14 @@
 - (IBAction)testUDPHandler:(id)sender {
     if (_stop)
         _stop = NO;
-    if (_udpCount < _maxCount) {
+    while (_udpCount < _maxCount) {
         [self testUDPTraffic];
         _udpCount += 1;
     }
 }
 
 - (void)testUDPTraffic {
-    NSData *data = [self dataFromMessage:@"hello world"];
+    NSData *data = [self dataFromMessage:self.message];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (!_stop) {
