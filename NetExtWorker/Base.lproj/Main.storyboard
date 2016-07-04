@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-4a-0EJ">
-                                <rect key="frame" x="88" y="517" width="200" height="33"/>
+                                <rect key="frame" x="88" y="397" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abq-9s-Oy3">
-                                <rect key="frame" x="88" y="434" width="200" height="33"/>
+                                <rect key="frame" x="88" y="334" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619120965" green="0.78010259851994856" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="5gY-wb-u1d"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHR-Cg-ITq">
-                                <rect key="frame" x="88" y="600" width="200" height="33"/>
+                                <rect key="frame" x="88" y="460" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -59,20 +59,30 @@
                                     <action selector="testUDPHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wzt-8S-WHU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network Extension Test Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Rl-x5V">
-                                <rect key="frame" x="42" y="80" width="293" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="1" green="0.13149307298185509" blue="0.30199420781760267" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-ga-20i">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wt7-4w-be7">
+                                <rect key="frame" x="88" y="523" width="200" height="33"/>
+                                <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hgz-R8-eyo"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Window" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-ga-20i">
+                                <rect key="frame" x="0.0" y="137" width="375" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                </variation>
                             </label>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-UF-F51">
-                                <rect key="frame" x="88" y="600" width="200" height="33"/>
+                                <rect key="frame" x="88" y="586" width="200" height="33"/>
                                 <color key="backgroundColor" red="0.63336534619999996" green="0.78010259849999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -85,66 +95,46 @@
                                     <action selector="testUDPHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kLf-GC-N4f"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network Extension Test Client" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ue-Rl-x5V">
+                                <rect key="frame" x="41" y="80" width="293" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.13149307298185509" blue="0.30199420781760267" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CHR-Cg-ITq" firstAttribute="top" secondItem="dPd-4a-0EJ" secondAttribute="bottom" constant="50" id="2WO-KP-Coj">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
-                            </constraint>
+                            <constraint firstItem="wt7-4w-be7" firstAttribute="top" secondItem="CHR-Cg-ITq" secondAttribute="bottom" constant="30" id="014-mz-xzT"/>
+                            <constraint firstItem="CHR-Cg-ITq" firstAttribute="top" secondItem="dPd-4a-0EJ" secondAttribute="bottom" constant="30" id="2WO-KP-Coj"/>
+                            <constraint firstItem="Bsf-ga-20i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4dW-xR-aai"/>
                             <constraint firstItem="dPd-4a-0EJ" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="6An-G2-bXs"/>
                             <constraint firstItem="Abq-9s-Oy3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E9P-Od-k8x"/>
-                            <constraint firstItem="Bsf-ga-20i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ekv-xA-OC1"/>
-                            <constraint firstItem="h9i-UF-F51" firstAttribute="top" secondItem="CHR-Cg-ITq" secondAttribute="bottom" constant="30" id="IBd-dK-jx3"/>
-                            <constraint firstItem="h9i-UF-F51" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="IkA-c2-hjF"/>
-                            <constraint firstItem="dPd-4a-0EJ" firstAttribute="top" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="50" id="KBW-eO-yFO">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
-                            </constraint>
-                            <constraint firstItem="Bsf-ga-20i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RVK-U6-lJ5"/>
+                            <constraint firstItem="Bsf-ga-20i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Fge-xv-TAA"/>
+                            <constraint firstItem="dPd-4a-0EJ" firstAttribute="top" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="30" id="KBW-eO-yFO"/>
+                            <constraint firstItem="wt7-4w-be7" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="Uij-ge-2lx"/>
                             <constraint firstItem="CHR-Cg-ITq" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="Vuf-lx-xOx"/>
-                            <constraint firstAttribute="bottom" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="200" id="i8c-9w-7lo">
-                                <variation key="heightClass=regular-widthClass=compact" constant="300"/>
+                            <constraint firstAttribute="bottom" secondItem="Abq-9s-Oy3" secondAttribute="bottom" constant="300" id="i8c-9w-7lo">
+                                <variation key="heightClass=compact-widthClass=regular" constant="260"/>
                             </constraint>
                             <constraint firstItem="dPd-4a-0EJ" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="jId-mp-kb7"/>
-                            <constraint firstItem="h9i-UF-F51" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="jsn-BD-HKx"/>
+                            <constraint firstItem="wt7-4w-be7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kKz-Hm-wvi"/>
                             <constraint firstItem="5Ue-Rl-x5V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kMd-ep-3xI"/>
-                            <constraint firstItem="Bsf-ga-20i" firstAttribute="top" secondItem="5Ue-Rl-x5V" secondAttribute="bottom" constant="90" id="oYY-Fp-gCN"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="top" secondItem="wt7-4w-be7" secondAttribute="bottom" constant="30" id="om8-oo-8PP"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pu2-T7-fol"/>
+                            <constraint firstItem="h9i-UF-F51" firstAttribute="width" secondItem="Abq-9s-Oy3" secondAttribute="width" id="vbd-Wx-nnK"/>
                             <constraint firstItem="5Ue-Rl-x5V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="vpq-zM-kdh">
-                                <variation key="widthClass=regular" constant="20"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="CHR-Cg-ITq" firstAttribute="centerX" secondItem="Abq-9s-Oy3" secondAttribute="centerX" id="w1q-SI-8LO"/>
+                            <constraint firstItem="Bsf-ga-20i" firstAttribute="top" secondItem="5Ue-Rl-x5V" secondAttribute="bottom" constant="30" id="ykv-qO-hhA">
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.0"/>
+                            </constraint>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Bsf-ga-20i"/>
-                                <exclude reference="h9i-UF-F51"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Ekv-xA-OC1"/>
-                                <exclude reference="RVK-U6-lJ5"/>
-                                <exclude reference="oYY-Fp-gCN"/>
-                                <exclude reference="IBd-dK-jx3"/>
-                                <exclude reference="IkA-c2-hjF"/>
-                                <exclude reference="jsn-BD-HKx"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Bsf-ga-20i"/>
-                                <include reference="h9i-UF-F51"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Ekv-xA-OC1"/>
-                                <include reference="RVK-U6-lJ5"/>
-                                <include reference="oYY-Fp-gCN"/>
-                                <include reference="IBd-dK-jx3"/>
-                                <include reference="IkA-c2-hjF"/>
-                                <include reference="jsn-BD-HKx"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="messageLabel" destination="Bsf-ga-20i" id="n36-cb-lzA"/>
+                        <outlet property="stopButton" destination="wt7-4w-be7" id="ab4-Db-0OX"/>
                         <outlet property="testAllButton" destination="h9i-UF-F51" id="m1E-Jf-eOS"/>
                         <outlet property="testHTTPButton" destination="Abq-9s-Oy3" id="5DQ-u0-zcf"/>
                         <outlet property="testTCPButton" destination="dPd-4a-0EJ" id="oet-UG-eba"/>
@@ -153,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="717.75" y="350.625"/>
+            <point key="canvasLocation" x="717.5" y="350.5"/>
         </scene>
     </scenes>
 </document>
