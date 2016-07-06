@@ -11,6 +11,11 @@
 #import "CocoaAsyncSocket.h"
 #import "AFNetworking.h"
 
+static NSString *IPADDRESS = @"192.168.1.195";
+static NSInteger HTTPPORT = 8080;
+static NSInteger TCPPORT = 31500;
+static NSInteger UDPPORT = 31600;
+
 @interface ViewController () <GCDAsyncSocketDelegate, GCDAsyncUdpSocketDelegate>
 // UI components
 @property (weak, nonatomic) IBOutlet UIButton *testHTTPButton;
@@ -43,6 +48,7 @@
     NSInteger _tcpCount;
     NSInteger _udpCount;
     NSInteger _maxCount;
+    BOOL _isSingleConn;
 }
 
 //@synthesize stop = _stop;
@@ -69,6 +75,7 @@
     _httpCount = 0;
     _tcpCount = 0;
     _udpCount = 0;
+    _isSingleConn = NO;
 }
 
 - (void)createClients {
@@ -109,7 +116,7 @@
     __weak typeof(self) weakSelf = self;
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
-    NSURL * url = [NSURL URLWithString:@"http://192.168.1.195:8080"];
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%ld", IPADDRESS, HTTPPORT]];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (!_stop) {
             @autoreleasepool {
@@ -146,13 +153,23 @@
     NSData *data = [self dataFromMessage:self.message];
     __weak typeof(self) weakSelf = self;
     NSError *error = nil;
-    if (!self.tcpSocket.isConnected) 
-        [weakSelf.tcpSocket connectToHost:@"192.168.1.195" onPort:31500 error:&error];
+    if (_isSingleConn) {
+        if (!self.tcpSocket.isConnected)
+        [weakSelf.tcpSocket connectToHost:IPADDRESS onPort:TCPPORT error:&error];
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (!_stop) {
+            if (!_isSingleConn) {
+                NSError *connError = nil;
+                if (!self.tcpSocket.isConnected)
+                [weakSelf.tcpSocket connectToHost:IPADDRESS onPort:TCPPORT error:&connError]; // connect is sync mode
+            }
             [weakSelf.tcpSocket writeData:data withTimeout:-1 tag:0];
             [weakSelf.tcpSocket readDataWithTimeout:-1 tag:0];
             sleep(2);
+            if (!_isSingleConn) {
+                [weakSelf.tcpSocket disconnect]; // disconnect is sync mode
+            }
         }
     });
 }
@@ -171,7 +188,7 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         while (!_stop) {
-            [weakSelf.udpSocket sendData:data toHost:@"192.168.1.195" port:31600 withTimeout:-1 tag:0];
+            [weakSelf.udpSocket sendData:data toHost:IPADDRESS port:UDPPORT withTimeout:-1 tag:0];
             NSError *reError = nil;
             [weakSelf.udpSocket receiveOnce:&reError];
             sleep(2);
